@@ -29,28 +29,6 @@ namespace MDIProjektPrototyp
         /// </summary>
         private void InitializeComponent()
         {
-
-            // 
-            // Form1
-            // 
-            InitializeUI();
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(398, 857);
-            
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-
-        }
-
-        #endregion
-
-
-        #region Code for Initializeing Basic UI
-
-        private void InitializeUI()
-        {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -99,31 +77,65 @@ namespace MDIProjektPrototyp
 
 
 
+            
+            // 
+            // Form1
+            // 
+            InitializeUI();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(398, 857);
+            
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+
         }
 
         #endregion
 
 
+        #region Code for Initializeing Basic UI
+
+        private void InitializeUI()
+        {
+            this.button1.Show();
+            this.button2.Show();
+            this.button3.Show();
+            this.button4.Show();
+        }
+
+        #endregion
+        private void HideEverything()
+        {
+            for (int i = 0; i < this.Controls.Count; i++)
+            {
+                this.Controls[i].Hide();
+            }
+        }
+
         private void InitializeFriends()
         {
-            this.Controls.Clear();
+            HideEverything();
             InitializeUI();
 
         }
 
         private void InitializeGoals()
         {
-            this.Controls.Clear();
+            HideEverything(); 
             InitializeUI();
+            
         }
 
         private void InitializeProfile()
         {
-            this.Controls.Clear();
+            HideEverything();
             InitializeUI();
         }
 
